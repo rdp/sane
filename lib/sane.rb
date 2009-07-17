@@ -36,3 +36,12 @@ doctest: Also,  like a normal require, you can leave off the .rb suffix
 => 1
 
 =end
+
+
+class Object
+ def in? collection
+   collection.include?(self)
+ end
+end
+
+require_rel 'enumerable-extra'
