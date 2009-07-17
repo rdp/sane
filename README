@@ -1,0 +1,22 @@
+Collection of utilities to make ruby more user friendly.
+
+Currently:
+
+require_rel glob
+  * require a file relative to the current, i.e.
+   require_rel 'lib/filename'
+
+Object#in?
+ 3.in? [1,2,3]
+ => true
+  
+println
+ like print, but with a carriage return at the end:
+ println 1,2,3
+ (prints 123\n)
+
+enumerable-extra
+  #new enumerable #map
+  [1,2,3].map(:to_s) # applies it automatically! far less ugly than [1,2,3].map &:to_s
+
+Don't leave home without these!
