@@ -3,3 +3,7 @@ nothing really, but...
 
 with enumerable-extra, I think we only want the map :symbol not
 [1,2,3].map(:to_s, 'a')
+
+depend on rogerdpack-rbeautify # oh boy :)
+
+depend on andand # this is a must have, too
