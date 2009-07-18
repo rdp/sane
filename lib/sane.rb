@@ -55,6 +55,13 @@ class Object
     raise "assertion failed #{string}"
    end
  end
+
+ # 1.8.x only currently
+ def _dbg
+   require 'rubygems'
+   require 'ruby-debug'
+   debugger
+ end
    
 end
 

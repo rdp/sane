@@ -1,2 +1,6 @@
+0.0.5
+  * add dependency on andand, rogerdpack-rbeautify # essentials
+  * add dbg call [essential]
+
 0.0.3
  * add assert method
