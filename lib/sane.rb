@@ -41,9 +41,21 @@ doctest: Also,  like a normal require, you can leave off the .rb suffix
 
 
 class Object
+
+ # a helper for collection.include?
  def in? collection
    collection.include?(self)
  end
+  
+ # assert(some statement)
+ # or
+ # assert(some statement, "some helper string")
+ def assert(should_be_true, string = nil)
+   if(!should_be_true)
+    raise "assertion failed #{string}"
+   end
+ end
+   
 end
 
-require_rel 'enumerable-extra'
+require_rel 'enumerable-extra' # for #map :symbol
