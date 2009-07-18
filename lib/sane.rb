@@ -1,6 +1,8 @@
-
 # currently accepts either a glob [something with * in it]
 # or a filename
+# TODO depend on require_all once they fix their issues
+# and also don't load themselves apropo on 1.9, etc. etc.
+# which I'm not too worried about anyway tho
 def require_rel glob # we don't allow for requiring directories currently :)
   dir = File.dirname(caller[0]) + '/'
   if glob.include? '*'

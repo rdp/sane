@@ -1,0 +1,2 @@
+with enumerable-extra, I think we only want the map :symbol not
+[1,2,3].map(:to_s, 'a')
