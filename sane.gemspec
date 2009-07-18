@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roger PacK"]
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = s.summary =  %q{Helper methods for ruby to make it easier to work with}
   s.email = ["rogerdpack@gmail.com"]
   s.extra_rdoc_files = ["README"]
-  s.files = ["README", "lib/sane.rb"]
+  s.files = ["README", "lib/sane.rb", "lib/enumerable-extra.rb"]
   s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}
