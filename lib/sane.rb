@@ -66,3 +66,4 @@ class Object
 end
 
 require_rel 'enumerable-extra' # for #map :symbol
+require 'andand' # andand rox

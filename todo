@@ -2,3 +2,5 @@ nothing really, but...
 
 maybe with enumerable-extra, we only want the map :symbol not
 [1,2,3].map(:to_s, 'a')
+
+_?
