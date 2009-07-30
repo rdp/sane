@@ -39,7 +39,6 @@ doctest: Also,  like a normal require, you can leave off the .rb suffix
 
 =end
 
-
 class Object
 
  # a helper for collection.include?
@@ -56,13 +55,14 @@ class Object
    end
  end
 
- # 1.8.x only currently
+ # for this to work in 1.9, please follow directions: http://wiki.github.com/mark-moseley/ruby-debug
+ # for 1.8, run gem install ruby-debug
  def _dbg
    require 'rubygems'
    require 'ruby-debug'
    debugger
  end
-   
+
 end
 
 require_rel 'enumerable-extra' # for #map :symbol
