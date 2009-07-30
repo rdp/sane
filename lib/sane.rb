@@ -1,59 +1,27 @@
-# currently accepts either a glob [something with * in it]
-# or a filename
-# TODO depend on require_all once they fix their issues
-# and also don't load themselves apropo on 1.9, etc. etc.
-# which I'm not too worried about anyway tho
-def require_rel glob # we don't allow for requiring directories currently :)
-  dir = File.dirname(caller[0]) + '/'
-  if glob.include? '*'
-    files = Dir[dir + glob]
-  else
-    files = [dir + glob]
-  end
-  for file in files
-   if(!File.exist?(file) && File.exist?(file + '.rb'))
-    require file + '.rb'
-   else
-    require file
-   end
-  end
-end
+require 'require_all' # require_all, require_rel
+require_rel 'enumerable-extra' # for #map(:symbol)
 
+# a method like puts but all on one line--very much like java's println, quite useful
 def println *args
  print *args
  puts
 end
-
-=begin rdoc
-
-doctest: loads from subdir with a full name
->> dir = Dir.pwd
->> Dir.chdir('..') do; require dir + "/test_sane/load"; end
->> $here
-=> 1
-
-doctest: Also,  like a normal require, you can leave off the .rb suffix
->> Dir.chdir('..') do; require dir + "/test_sane/load2"; end 
->> $here2
-=> 1
-
-=end
 
 class Object
 
  # a helper for collection.include?
  def in? collection
    collection.include?(self)
- end
+ end unless respond_to? :in
   
- # assert(some statement)
+ # ex: assert(some statement)
  # or
  # assert(some statement, "some helper string")
  def assert(should_be_true, string = nil)
    if(!should_be_true)
     raise "assertion failed #{string}"
    end
- end
+ end unless respond_to? :assert
 
  # for this to work in 1.9, please follow directions: http://wiki.github.com/mark-moseley/ruby-debug
  # for 1.8, run gem install ruby-debug
@@ -65,5 +33,6 @@ class Object
 
 end
 
-require_rel 'enumerable-extra' # for #map :symbol
-require 'andand' # andand rox
+if RUBY_VERSION < '1.9'
+  # TODO require 'unique_require' # require things in the right order, on 1.8.x
+end
