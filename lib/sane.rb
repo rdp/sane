@@ -36,3 +36,13 @@ end
 if RUBY_VERSION < '1.9'
   # TODO require 'unique_require' # require things in the right order, on 1.8.x
 end
+
+# taken from http://oldrcrs.rubypal.com/rcr/show/309
+module Kernel
+    BASE_DIR = Dir.getwd
+    def __DIR__
+      dir = (/^(.+)?:\d+/ =~ caller[0]) ? File.expand_path(File.dirname($1), BASE_DIR) : nil
+      dir += '/' if dir
+      dir
+    end
+end
