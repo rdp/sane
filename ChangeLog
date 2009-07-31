@@ -1,3 +1,9 @@
+0.1.0
+ * add File.write [stolen from facets]
+
+0.0.8
+ * add __DIR__ [stolen from oldrcrs]
+
 0.0.6
   * bug fix [require andand]
 

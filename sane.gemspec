@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.0.8"
+  s.version = "0.1.0"
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roger PacK"]
   s.date = %q{2009-07-02}
@@ -21,8 +21,12 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       # TODO gemify unique_require, then uncomment this line
       # s.add_runtime_dependency(%q<unique_require>)
+
       s.add_runtime_dependency("require_all", ['>= 1.1'])
       # s.add_development_dependency(%q<newgem>, [">= 1.4.1"])
+
+      # don't need it yet..too big...maybe?
+      #s.add_runtime_dependency("facets")
     else
       #  s.add_dependency(%q<ParseTree>, [">= 3.0.3"])
     end

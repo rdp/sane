@@ -12,4 +12,11 @@ describe TestSane do
     __DIR__.should_not == nil
   end
 
+  it "should write to files" do
+   filename = __DIR__ + '/test'
+   File.write(filename, "abc")
+   assert(File.exist?(filename))
+   File.delete filename
+  end
+
 end
