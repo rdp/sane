@@ -4,3 +4,5 @@ maybe with enumerable-extra, we only want the map :symbol not
 [1,2,3].map(:to_s, 'a')
 
 _?
+
+test the file.write--it should work as expected on linux+windows
