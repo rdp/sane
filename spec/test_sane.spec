@@ -19,4 +19,13 @@ describe TestSane do
    File.delete filename
   end
 
+  class A
+    def go; 3; end
+    aliaz :go2 => :go
+  end
+
+  it "should aliaz right" do
+    A.new.go2.should == 3
+  end
+   
 end
