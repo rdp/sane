@@ -27,5 +27,11 @@ describe TestSane do
   it "should aliaz right" do
     A.new.go2.should == 3
   end
+
+  it "should work with singleton class" do
+    class A; end
+    A.singleton_class.module_eval { def go; end }
+    A.go
+  end
    
 end

@@ -57,6 +57,10 @@ class Object
       alias_method new, old
     }
   end
+
+  def singleton_class
+    class << self; self; end
+  end
 end
 
 if RUBY_VERSION < '1.9'
