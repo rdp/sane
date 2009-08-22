@@ -3,6 +3,17 @@ module Enumerable
 
    alias old_map map
    alias old_collect collect
+=begin unused as it clashes with rails' own #sum
+  apparently
+  C:\dev\ruby\bridal>ruby test\functional\store_controller_test.rb
+test/functional/../test_helper
+C:/dev/ruby/bridal/config/../lib/sane-0.1.4/lib/enumerable-extra.rb:12:in `+': can't convert String into Array (TypeError)
+        from C:/dev/ruby/bridal/config/../lib/sane-0.1.4/lib/enumerable-extra.rb:12:in `sum'
+        from C:/dev/ruby/bridal/config/../lib/sane-0.1.4/lib/enumerable-extra.rb:12:in `each'
+        from C:/dev/ruby/bridal/config/../lib/sane-0.1.4/lib/enumerable-extra.rb:12:in `sum'
+        from C:/dev/ruby/bridal/vendor/rails/actionpack/lib/action_controller/layout.rb:189:in `layout_list'
+
+2.1
 
    # Returns the numeric total of the elements of +enum+, using +total+ as
    # an accumulator (0 by default). Raises an error if any of the elements
@@ -12,6 +23,7 @@ module Enumerable
       each{ |val| total += val }
       total
    end
+=end
 
    # Returns a new array containing the results of running +method+ once for
    # every element in the enumerable object. If both arguments and a block
