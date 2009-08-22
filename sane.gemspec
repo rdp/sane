@@ -2,8 +2,10 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.1.4" 
+  s.version = "0.1.5" 
+  
   # 0.1.
+  #     5 remove #sum method [not rails compat]
   #     4 add _dbg as a file
   # 0.1.3 require 'pp' with _dbg
   # 0.1.2 add singleton_class
