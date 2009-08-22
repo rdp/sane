@@ -2,17 +2,20 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.1.2" 
+  s.version = "0.1.4" 
+  # 0.1.
+  #     4 add _dbg as a file
+  # 0.1.3 require 'pp' with _dbg
   # 0.1.2 add singleton_class
   # 0.1.1 add aliaz
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Roger PacK"]
-  s.date = %q{2009-07-02}
-  s.description = s.summary =  %q{Helper methods for ruby to make it easier to work with}
+  s.homepage = 'http://github.com/rogerdpack/sane_ruby'
+  s.authors = ["Roger Pack"]
+  s.description = s.summary =  %q{Helper methods for ruby to make it easier to work with out of the box--things that are missing from core but should be there}
   s.email = ["rogerdpack@gmail.com"]
   s.extra_rdoc_files = ["README"]
-  s.files = ["README", "lib/sane.rb", "lib/enumerable-extra.rb"]
+  s.files = ["README", "lib/sane.rb", "lib/enumerable-extra.rb", "lib/_dbg.rb"]
   s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}

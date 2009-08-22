@@ -9,7 +9,7 @@ class File
   #
   # Returns the number of bytes written.
   #
-  # CREDIT: Gavin Sinclair
+  # CREDIT: facets/Gavin Sinclair
 
   def self.write(path, data)
     File.open(path, "wb") do |file|
@@ -42,8 +42,13 @@ class Object
   # for 1.8, run gem install ruby-debug
   def _dbg
     require 'rubygems'
-    require 'ruby-debug'
-    debugger
+    require 'pp' # who would want debug without pp? not I
+    begin
+      require 'ruby-debug'
+      debugger
+    rescue LoadError => e
+      throw "unable to load ruby-debug gem for _dbg... #{e}"
+    end
   end
 
   # a method like puts but all on one line--very much like java's println, quite useful
