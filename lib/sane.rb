@@ -12,7 +12,7 @@ class File
   # CREDIT: facets/Gavin Sinclair
 
   def self.write(path, data)
-    File.open(path, "wb") do |file|
+    File.open(path, "w") do |file|
       return file.write(data)
     end
   end unless self.respond_to?(:write)
@@ -22,6 +22,12 @@ class File
       return file.read
     end
   end unless self.respond_to?(:binread)
+
+  def self.binwrite(path, data)
+    File.open(path, "wb") do |file|
+      return file.write(data)
+    end
+  end
 
 end
 
@@ -61,7 +67,7 @@ class Object
     puts
   end
 
-  def aliaz hash
+  def alias_h hash
     hash.each_pair {|new, old|
       alias_method new, old
     }

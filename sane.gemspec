@@ -2,9 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.1.6" 
+  s.version = "0.1.7" 
   
   # 0.1.
+  #     7 add File.binwrite
+  #       rename aliaz alias_h [ for alias hash ]
   #     6 add File.binread [1.9 has it, 1.8 not]
   #     5 remove #sum method [not rails compat]
   #     4 add _dbg as a file

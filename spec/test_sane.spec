@@ -14,21 +14,24 @@ describe TestSane do
 
   it "should write to files" do
    filename = __DIR__ + '/test'
-   File.write(filename, "abc")
+   File.write(filename, "abc\n")
    assert(File.exist?(filename))
+   if RUBY_PLATFORM =~ /mswin|mingw/
+     assert(File.binread(filename) == "abc\r\n") # it should have written it out *not* in binary mode
+   end
    File.delete filename
   end
 
   class A
     def go; 3; end
-    aliaz :go2 => :go
+    alias_h :go2 => :go
   end
 
   it "should aliaz right" do
     A.new.go2.should == 3
   end
 
-  it "should work with singleton class" do
+  it "should have a singleton_class method" do
     class A; end
     A.singleton_class.module_eval { def go; end }
     A.go
@@ -38,5 +41,10 @@ describe TestSane do
     File.open("test_bin", "wb") do |f|; f.write "a\r\n"; end
     assert File.binread("test_bin") == "a\r\n"
   end  
+
+  it "should have a binwrite method" do
+   File.binwrite 'test_bin', "a\r\n"
+   assert File.binread("test_bin") == "a\r\n"
+  end
    
 end
