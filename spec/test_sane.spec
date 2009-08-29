@@ -33,5 +33,10 @@ describe TestSane do
     A.singleton_class.module_eval { def go; end }
     A.go
   end
+
+  it "should have a binread method" do
+    File.open("test_bin", "wb") do |f|; f.write "a\r\n"; end
+    assert File.binread("test_bin") == "a\r\n"
+  end  
    
 end

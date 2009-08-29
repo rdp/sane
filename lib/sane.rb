@@ -1,5 +1,5 @@
-require 'require_all' # require_all, require_rel gem
-require_rel 'enumerable-extra' # for #map(:symbol)
+require 'require_all' # require_all, require_rel
+require_rel 'sane_ruby' # for enumerable extra #map(:symbol)
 
 # require 'facets/file' ===>
 class File
@@ -17,9 +17,13 @@ class File
     end
   end unless self.respond_to?(:write)
 
+  def self.binread(path)
+    File.open(path, "rb") do |file|
+      return file.read
+    end
+  end unless self.respond_to?(:binread)
+
 end
-
-
 
 class Object
 
