@@ -2,9 +2,10 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.1.7" 
+  s.version = "0.1.8" 
   
   # 0.1.
+  #     8 add Hash#hash
   #     7 add File.binwrite
   #       rename aliaz alias_h [ for alias hash ]
   #     6 add File.binread [1.9 has it, 1.8 not]
@@ -20,7 +21,7 @@ Gem::Specification.new do |s|
   s.description = s.summary =  %q{Helper methods for ruby to make it easier to work with out of the box--things that are missing from core but should be there}
   s.email = ["rogerdpack@gmail.com"]
   s.extra_rdoc_files = ["README"]
-  s.files = ["README", "lib/sane.rb", "lib/sane_ruby/enumerable-extra.rb", "lib/_dbg.rb"]
+  s.files = ["README", "lib/sane.rb", "lib/sane_ruby/enumerable-extra.rb", "lib/_dbg.rb", "lib/sane_ruby/hash_hashes.rb"]
   s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}

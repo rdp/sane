@@ -46,5 +46,15 @@ describe TestSane do
    File.binwrite 'test_bin', "a\r\n"
    assert File.binread("test_bin") == "a\r\n"
   end
+
+  it "should hash hashes right" do
+    a = {}
+
+    a[{:a => 3, :b => 4}] = 3
+    assert a[{:b => 4, :a => 3}] == 3
+    assert a[{:b => 3, :a => 4}] == nil
+  end
+
+ 
    
 end
