@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.description = s.summary =  %q{Helper methods for ruby to make it easier to work with out of the box--things that are missing from core but should be there}
   s.email = ["rogerdpack@gmail.com"]
   s.extra_rdoc_files = ["README"]
-  s.files = ["README", "lib/sane.rb", "lib/sane_ruby/enumerable-extra.rb", "lib/_dbg.rb", "lib/sane_ruby/hash_hashes.rb", "lib/sane_ruby/irb_autocomplete.rb"]
+  s.files = ["README", "lib/sane.rb", "lib/sane_ruby/enumerable-extra.rb", "lib/_dbg.rb", "lib/sane_ruby/hash_hashes.rb", "lib/sane_ruby/irb_startup_options.rb"]
   s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}
