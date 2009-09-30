@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   
   # 0.2.0: 
   #       add irb simple prompt, auto indent by default [sane defaults!]
-  #     1: add $: << '.'
+  #     1: add $: << '.', don't do Hash#hash on 1.9
   # 0.1.
   #     9 add irb autocompletion on by default [if you're in an IRB session, that is]
   #     8 add Hash#hash
