@@ -2,10 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.2.0" 
+  s.version = "0.2.1" 
   
   # 0.2.0: 
   #       add irb simple prompt, auto indent by default [sane defaults!]
+  #     1: add $: << '.'
   # 0.1.
   #     9 add irb autocompletion on by default [if you're in an IRB session, that is]
   #     8 add Hash#hash

@@ -92,3 +92,7 @@ module Kernel
     dir
   end unless defined?(__DIR__)
 end
+
+if RUBY_VERSION >= '1.9.2'
+  $: << '.' # for some reason loading files from the cwd was taken out.  That is not sane.
+end
