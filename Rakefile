@@ -1,3 +1,4 @@
+require 'jeweler'
 Jeweler::Tasks.new do |s|
 
   s.name = %q{sane}

@@ -1,7 +1,6 @@
-require 'require_all' # require_all, require_rel
-require_rel 'sane_ruby' # for enumerable extra #map(:symbol)
+require 'require_all' # a necessary gem
 
-# require 'facets/file' ===>
+# abstracted from require 'facets/file' ===>
 class File
 
   # Writes the given data to the given path and closes the file.  This is
@@ -31,6 +30,8 @@ class File
 
 end
 
+
+# more helpers
 class Object
 
   # a helper for collection.include?
@@ -48,8 +49,6 @@ class Object
   end unless respond_to? :assert
 
   # helper to bring up a debugger
-  # for this to work in 1.9, please follow directions: http://wiki.github.com/mark-moseley/ruby-debug
-  # for 1.8, run gem install ruby-debug
   def _dbg
     require 'rubygems'
     require 'pp' # who would want debug without pp? not I

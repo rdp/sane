@@ -55,6 +55,9 @@ describe TestSane do
     assert a[{:b => 3, :a => 4}] == nil
   end
 
+  it "should allow regexes to be added" do
+    /a/ + /b/
+  end
  
    
 end
