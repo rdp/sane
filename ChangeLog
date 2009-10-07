@@ -1,3 +1,6 @@
+* renamed println to sprint
+
+
 0.1.0
  * add File.write [stolen from facets]
 

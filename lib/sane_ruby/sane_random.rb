@@ -60,8 +60,8 @@ class Object
     end
   end
 
-  # a method like puts but all on one line--very much like java's println, quite useful
-  def println *args
+  # a method like puts but all on one line--very much like java's println
+  def sprint *args
     print *args
     puts
   end
