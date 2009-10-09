@@ -58,6 +58,10 @@ describe TestSane do
   it "should allow regexes to be added" do
     /a/ + /b/
   end
+
+  it "should allow for accept on arrays" do
+    assert [1,2].accept{|i| i == 1} == [1]
+  end
  
    
 end
