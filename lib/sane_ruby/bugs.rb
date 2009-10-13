@@ -1,10 +1,15 @@
 
+if RUBY_PLATFORM =~ /mingw|mswin/
 class File
- def File.executable? *args
-   File.stat(*args).executable?
+ # buggy File.executable? on windows
+ class << self
+   undef :executable?
+   def executable? *args
+     File.stat(*args).executable?
+   end
  end
 end
-
+end
 
 if RUBY_VERSION == '1.9.1'
  # 1.9.1 bug
