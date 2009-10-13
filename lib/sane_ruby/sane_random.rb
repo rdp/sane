@@ -1,5 +1,10 @@
 require 'require_all' # a necessary gem
 
+Thread.abort_on_exception = true # typically you *want* to know when a thread dies unexpectedly.
+
+require 'socket'
+BasicSocket.do_not_reverse_lookup = true
+
 # abstracted from require 'facets/file' ===>
 class File
 
