@@ -59,8 +59,9 @@ describe TestSane do
     /a/ + /b/
   end
 
-  it "should allow for accept on arrays" do
-    assert [1,2].accept{|i| i == 1} == [1]
+  it "should allow for brackets on enumerators" do
+    require 'backports' # ugh
+    assert "ab\r\nc".lines[0] == "ab\r\n"
   end
  
    
