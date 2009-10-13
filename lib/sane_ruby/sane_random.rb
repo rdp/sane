@@ -21,12 +21,6 @@ class File
     end
   end unless self.respond_to?(:write)
 
-  def self.binread(path)
-    File.open(path, "rb") do |file|
-      return file.read
-    end
-  end unless self.respond_to?(:binread)
-
   def self.binwrite(path, data)
     File.open(path, "wb") do |file|
       return file.write(data)
@@ -80,10 +74,6 @@ class Object
   def singleton_class
     class << self; self; end
   end
-end
-
-if RUBY_VERSION < '1.9'
-  # TODO require 'unique_require' # require things in the right order, on 1.8.x
 end
 
 # taken from http://oldrcrs.rubypal.com/rcr/show/309
