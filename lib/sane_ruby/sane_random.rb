@@ -29,7 +29,6 @@ class File
 
 end
 
-
 # more helpers
 class Object
 
@@ -61,7 +60,7 @@ class Object
 
   # a method like puts but all on one line--very much like java's println
   def sprint *args
-    print *args
+    print(*args)
     puts
   end
 
