@@ -25,5 +25,6 @@ Jeweler::Tasks.new do |s|
   s.description = s.summary =  %q{Helper methods for ruby to make it easier to work with out of the box--things that are missing from core but should be there}
   s.email = ["rogerdpack@gmail.com"]
 
+  s.add_runtime_dependency("require_all")
   s.add_runtime_dependency("backports")
 end
