@@ -1,29 +1,29 @@
 
 if RUBY_PLATFORM =~ /mingw|mswin/
-class File
- # buggy File.executable? on windows
- class << self
-   undef :executable?
-   def executable? *args
-     File.stat(*args).executable?
-   end
- end
-end
+  class File
+    # buggy File.executable? on windows
+    class << self
+      undef :executable?
+      def executable? *args
+        File.stat(*args).executable?
+      end
+    end
+  end
 end
 
 if RUBY_VERSION == '1.9.1'
- # 1.9.1 bug
- if File.basename(__FILE__).frozen?
-   class File
-        class << self
-         alias :original_basename :basename
+  # 1.9.1 bug
+  if File.basename(__FILE__).frozen?
+    class File
+      class << self
+        alias :original_basename :basename
         def File.basename *args
-           original_basename(*args).dup
+          original_basename(*args).dup
         end
-         end
-   end
- end
-           
+      end
+    end
+  end
+
 end
 
 
