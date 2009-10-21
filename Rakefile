@@ -3,8 +3,8 @@ require 'jeweler'
 Jeweler::Tasks.new do |s|
 
   s.name = %q{sane}
-  s.version = "0.2.2"
-
+  s.version = "0.2.3"
+  #     3: add hash_set_operators
   # 0.2.2: add Regex+Regex, bug fixes
   # 0.2.0:
   #       add irb simple prompt, auto indent by default [sane defaults!]
@@ -28,4 +28,5 @@ Jeweler::Tasks.new do |s|
 
   s.add_runtime_dependency("require_all")
   s.add_runtime_dependency("backports")
+  s.add_runtime_dependency("hash_set_operators")
 end
