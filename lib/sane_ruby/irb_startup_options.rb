@@ -1,5 +1,9 @@
 if defined? IRB
-  require 'irb/completion'
+
+  begin
+    require 'irb/completion' # this one can fail if readline isn't installed
+  rescue Exception
+  end
   begin
     IRB.conf[:AUTO_INDENT] = true
     IRB.conf[:PROMPT_MODE] = :SIMPLE 
