@@ -3,7 +3,6 @@ require 'jeweler'
 Jeweler::Tasks.new do |s|
 
   s.name = %q{sane}
-  s.version = "0.2.3"
   #     3: add hash_set_operators
   # 0.2.2: add Regex+Regex, bug fixes
   # 0.2.0:
