@@ -46,7 +46,7 @@ class Object
     end
   end unless respond_to? :assert
 
-  # helper to bring up a debugger
+  # helper to bring up a debugger with less writing [just _dbg]
   def _dbg
     require 'rubygems'
     require 'pp' # who would want debug without pp? not I
@@ -58,13 +58,13 @@ class Object
     end
   end
 
-  # a method like puts but all on one line--very much like java's println
+  # a method like puts but all on one line--very much like java's println--which lacks in ruby
   def sprint *args
     print(*args)
     puts
   end
 
-  def alias_h hash
+  def aliash hash
     hash.each_pair {|new, old|
       alias_method new, old
     }
@@ -88,4 +88,11 @@ end
 
 if RUBY_VERSION >= '1.9.2'
   $: << '.' # for some reason loading files from the cwd was taken out.  That is not sane.
+end
+
+class OS
+ def self.windows?
+  require 'rbconfig'
+  RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
+ end
 end

@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/../lib/sane'
-
+require 'rubygems'
 class TestSane; end
 
 describe TestSane do
@@ -24,7 +24,7 @@ describe TestSane do
 
   class A
     def go; 3; end
-    alias_h :go2 => :go
+    aliash :go2 => :go
   end
 
   it "should aliaz right" do
@@ -38,13 +38,13 @@ describe TestSane do
   end
 
   it "should have a binread method" do
-    File.open("test_bin", "wb") do |f|; f.write "a\r\n"; end
-    assert File.binread("test_bin") == "a\r\n"
+    File.open("bin_test", "wb") do |f|; f.write "a\r\n"; end
+    assert File.binread("bin_test") == "a\r\n"
   end  
 
   it "should have a binwrite method" do
-   File.binwrite 'test_bin', "a\r\n"
-   assert File.binread("test_bin") == "a\r\n"
+   File.binwrite 'bin_test', "a\r\n"
+   assert File.binread("bin_test") == "a\r\n"
   end
 
   it "should hash hashes right" do
@@ -53,6 +53,10 @@ describe TestSane do
     a[{:a => 3, :b => 4}] = 3
     assert a[{:b => 4, :a => 3}] == 3
     assert a[{:b => 3, :a => 4}] == nil
+    a = {:a => 3}
+    a - {:a => 4}
+    assert a.length == 1
+ 
   end
 
   it "should allow regexes to be added" do
@@ -62,6 +66,15 @@ describe TestSane do
   it "should allow for brackets on enumerators" do
     require 'backports' # ugh
     assert "ab\r\nc".lines[0] == "ab\r\n"
+  end
+
+  it "should have a windows method" do
+   require 'rbconfig'
+   if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
+      assert OS.windows?
+   else
+      refute OS.windows?
+   end
   end
  
    
