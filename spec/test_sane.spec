@@ -63,10 +63,11 @@ describe TestSane do
     /a/ + /b/
   end
 
-  it "should allow for brackets on enumerators" do
-    require 'backports' # ugh
-    assert "ab\r\nc".lines[0] == "ab\r\n"
-  end
+# my first implementation of this was *awful* LOL
+#  it "should allow for brackets on enumerators" do
+#    require 'backports' # ugh
+#    assert "ab\r\nc".lines[0] == "ab\r\n"
+#  end
 
   it "should have a windows method" do
    require 'rbconfig'

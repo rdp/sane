@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.9.0"
+  s.version = "0.9.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roger Pack"]
-  s.date = %q{2009-11-03}
+  s.date = %q{2009-11-05}
   s.description = %q{Helper methods for ruby to make it easier to work with out of the box--things that are missing from core but should be there}
   s.email = ["rogerdpack@gmail.com"]
   s.extra_rdoc_files = [
@@ -23,14 +23,14 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/_dbg.rb",
      "lib/sane.rb",
-     "lib/sane_ruby/add_regexes.rb",
-     "lib/sane_ruby/bugs.rb",
-     "lib/sane_ruby/enumerable-extra.rb",
-     "lib/sane_ruby/enumerable_brackets.rb",
-     "lib/sane_ruby/hash_hashes.rb",
-     "lib/sane_ruby/hash_set_operators_bug_fix.rb",
-     "lib/sane_ruby/irb_startup_options.rb",
-     "lib/sane_ruby/sane_random.rb",
+     "lib/sane/add_regexes.rb",
+     "lib/sane/bugs.rb",
+     "lib/sane/enumerable-extra.rb",
+     "lib/sane/hash_hashes.rb",
+     "lib/sane/hash_set_operators_bug_fix.rb",
+     "lib/sane/irb_startup_options.rb",
+     "lib/sane/os.rb",
+     "lib/sane/sane_random.rb",
      "sane.gemspec",
      "spec/test_sane.spec",
      "todo"

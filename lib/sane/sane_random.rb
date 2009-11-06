@@ -89,10 +89,3 @@ end
 if RUBY_VERSION >= '1.9.2'
   $: << '.' # for some reason loading files from the cwd was taken out.  That is not sane.
 end
-
-class OS
- def self.windows?
-  require 'rbconfig'
-  RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
- end
-end
