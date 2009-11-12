@@ -77,6 +77,10 @@ describe TestSane do
       refute OS.windows?
    end
   end
+
+  it "should have good looking floats" do
+     assert(  (1.1 - 0.9).inspect == '0.20000000000000007000' )
+  end
  
    
 end
