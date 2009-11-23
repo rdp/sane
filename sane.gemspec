@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "lib/_dbg.rb",
      "lib/sane.rb",
      "lib/sane/add_regexes.rb",
+     "lib/sane/array_ave.rb",
      "lib/sane/bugs.rb",
      "lib/sane/enumerable-extra.rb",
      "lib/sane/float.rb",
