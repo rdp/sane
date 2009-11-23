@@ -78,8 +78,16 @@ describe TestSane do
    end
   end
 
-  it "should have good looking floats" do
-     assert(  (1.1 - 0.9).inspect == '0.20000000000000007000' )
+  it "should have good looking float#inspect" do
+     assert(  (1.1 - 0.9).inspect.include? '0.2000000' ) # 0.20000000000000006661 or something close to it
+  end
+
+  it "should return false if you call File.executable? non_existent_file" do
+    assert !File.executable?('nonexistent')
+  end
+
+  it "should have ave method" do
+    [1,2,3].ave.should == 2
   end
  
    

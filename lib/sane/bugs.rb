@@ -5,7 +5,7 @@ if RUBY_PLATFORM =~ /mingw|mswin/
     class << self
       undef :executable?
       def executable? *args
-        File.stat(*args).executable?
+        File.stat(*args).executable? rescue nil
       end
     end
   end
