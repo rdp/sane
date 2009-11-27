@@ -8,6 +8,9 @@ require_rel 'sane' # require all sub files
 
 class Sane
  def self.install_local!
+   if RUBY_VERSION >= '1.9'
+    raise 'you dont need to install local for 1.9!'
+   end
    require 'fileutils'
    require 'rbconfig'
 
