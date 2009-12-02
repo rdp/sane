@@ -1,8 +1,9 @@
 require File.dirname(File.expand_path __FILE__) + '/../lib/sane'
-require 'rubygems'
-class TestSane; end
 
-describe TestSane do
+require 'rubygems' if RUBY_VERSION < '1.9'
+require 'spec/autorun'
+
+describe Sane do
 
   before do
     #Object.send(:remove_const, 'Klass') rescue nil

@@ -1,10 +1,17 @@
-# some uber useful gems
-require 'rubygems'
+# require some "necessary" gems
+
+require 'rubygems' if RUBY_VERSION < '1.9' # for the other requires
 require 'require_all'
-require 'hash_set_operators' # not sure why these aren't in core
-require_rel 'sane' # require all sub files
+require 'hash_set_operators' # not sure why this one isn't in core
+
+require_rel 'sane' # and require all files in sub directory
+
 
 class Sane
+ # helper for installing it locally on 1.8
+ # if you want to be able to use it without rubygems
+ # except, then you'll still need rubygems anyway...
+ # I hate 1.8
  def self.install_local!
    if RUBY_VERSION >= '1.9'
     raise 'you dont need to install local for 1.9!'
