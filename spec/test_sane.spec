@@ -48,7 +48,7 @@ describe TestSane do
   end
 
   it "should hash hashes right" do
-    a = {}
+    a = {} # this fails in 1.8.6, or works, rather
 
     a[{:a => 3, :b => 4}] = 3
     assert a[{:b => 4, :a => 3}] == 3
@@ -89,6 +89,9 @@ describe TestSane do
   it "should have ave method" do
     [1,2,3].ave.should == 2
   end
- 
+
+  it "should have an sputs method that outputs " do
+    sputs 1,2,3
+  end
    
 end

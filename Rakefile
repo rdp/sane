@@ -22,10 +22,8 @@ Jeweler::Tasks.new do |s|
 
   s.homepage = 'http://github.com/rogerdpack/sane_ruby'
   s.authors = ["Roger Pack"]
-  s.description = s.summary =  %q{Helper methods for ruby to make it easier to work with out of the box--things that are missing from core but should be there}
+  s.description = s.summary =  %q{Helpers for ruby core to make it easier to work with--things that are missing from core but should arguably be there}
   s.email = ["rogerdpack@gmail.com"]
-
-  s.add_runtime_dependency("require_all")
-  s.add_runtime_dependency("backports")
+  s.add_runtime_dependency("require_all", '>= 1.0.1')
   s.add_runtime_dependency("hash_set_operators")
 end
