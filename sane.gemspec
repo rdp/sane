@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.10.1"
+  s.version = "0.10.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roger Pack"]
-  s.date = %q{2009-11-27}
-  s.description = %q{Helper methods for ruby to make it easier to work with out of the box--things that are missing from core but should be there}
+  s.date = %q{2009-12-01}
+  s.description = %q{Helpers for ruby core to make it easier to work with--things that are missing from core but should arguably be there}
   s.email = ["rogerdpack@gmail.com"]
   s.extra_rdoc_files = [
     "ChangeLog",
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
      "lib/sane/array_ave.rb",
      "lib/sane/bugs.rb",
      "lib/sane/enumerable-extra.rb",
+     "lib/sane/file.rb",
      "lib/sane/float.rb",
      "lib/sane/hash_hashes.rb",
      "lib/sane/hash_set_operators_bug_fix.rb",
@@ -42,24 +43,21 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Helper methods for ruby to make it easier to work with out of the box--things that are missing from core but should be there}
+  s.summary = %q{Helpers for ruby core to make it easier to work with--things that are missing from core but should arguably be there}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<require_all>, [">= 0"])
-      s.add_runtime_dependency(%q<backports>, [">= 0"])
+      s.add_runtime_dependency(%q<require_all>, [">= 1.0.1"])
       s.add_runtime_dependency(%q<hash_set_operators>, [">= 0"])
     else
-      s.add_dependency(%q<require_all>, [">= 0"])
-      s.add_dependency(%q<backports>, [">= 0"])
+      s.add_dependency(%q<require_all>, [">= 1.0.1"])
       s.add_dependency(%q<hash_set_operators>, [">= 0"])
     end
   else
-    s.add_dependency(%q<require_all>, [">= 0"])
-    s.add_dependency(%q<backports>, [">= 0"])
+    s.add_dependency(%q<require_all>, [">= 1.0.1"])
     s.add_dependency(%q<hash_set_operators>, [">= 0"])
   end
 end

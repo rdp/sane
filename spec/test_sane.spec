@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../lib/sane'
+require File.dirname(File.expand_path __FILE__) + '/../lib/sane'
 require 'rubygems'
 class TestSane; end
 
