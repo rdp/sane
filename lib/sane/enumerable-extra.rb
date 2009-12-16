@@ -158,4 +158,6 @@ class Array
    # Reset the aliases
    alias collect map
    alias collect! map!
+   alias collect_by collect
+   alias map_by map
 end

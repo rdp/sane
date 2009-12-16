@@ -96,7 +96,6 @@ describe Sane do
   end
 
   it "should allow for map_by" do
-   pending 'doing it'
    ["1"].map_by(:to_i).should == [1]
    ["1"].collect_by(:to_i).should == [1]
   end
