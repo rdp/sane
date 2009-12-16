@@ -94,5 +94,16 @@ describe Sane do
   it "should have an sputs method that outputs " do
     sputs 1,2,3
   end
+
+  it "should allow for map_by" do
+   pending 'doing it'
+   ["1"].map_by(:to_i).should == [1]
+   ["1"].collect_by(:to_i).should == [1]
+  end
+  
+  it "should allow for contain? and include?" do
+    assert "a".include? "a"
+    assert "a".contain? "a"
+  end
    
 end
