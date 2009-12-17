@@ -5,21 +5,19 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.12.0"
+  s.version = "0.12.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roger Pack"]
-  s.date = %q{2009-12-15}
+  s.date = %q{2009-12-16}
   s.description = %q{Helpers for ruby core to make it easier to work with--things that are missing from core but should arguably be there}
   s.email = ["rogerdpack@gmail.com"]
   s.extra_rdoc_files = [
-    "ChangeLog",
-     "README",
+    "README",
      "TODO"
   ]
   s.files = [
-    "ChangeLog",
-     "README",
+    "README",
      "Rakefile",
      "VERSION",
      "lib/_dbg.rb",

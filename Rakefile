@@ -24,6 +24,7 @@ Jeweler::Tasks.new do |s|
   s.authors = ["Roger Pack"]
   s.description = s.summary =  %q{Helpers for ruby core to make it easier to work with--things that are missing from core but should arguably be there}
   s.email = ["rogerdpack@gmail.com"]
-  s.add_runtime_dependency("rdp-require_all")
-  s.add_runtime_dependency("hash_set_operators")
+  s.add_dependency("rdp-require_all")
+  s.add_dependency("hash_set_operators")
+  s.add_dependency 'os'
 end

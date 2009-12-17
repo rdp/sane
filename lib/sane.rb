@@ -1,11 +1,12 @@
 # require some "necessary" gems
 
 require 'rubygems' if RUBY_VERSION < '1.9' # for the other requires
-require 'require_all'
+
+require 'require_all' # for require_rel
 require 'hash_set_operators' # not sure why this one isn't in core
+require 'os'
 
 require_rel 'sane' # and require all files in sub directory
-
 
 class Sane
  # helper for installing it locally on 1.8

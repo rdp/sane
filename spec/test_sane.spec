@@ -103,6 +103,7 @@ describe Sane do
   it "should allow for contain? and include?" do
     assert "a".include? "a"
     assert "a".contain? "a"
+    assert !("a".contain? "b")
   end
    
 end
