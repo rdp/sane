@@ -60,19 +60,11 @@ describe Sane do
   end
 
 # my first implementation of this was *awful* LOL
+# leave out for now
 #  it "should allow for brackets on enumerators" do
 #    require 'backports' # ugh
 #    assert "ab\r\nc".lines[0] == "ab\r\n"
 #  end
-
-  it "should have a windows method" do
-   require 'rbconfig'
-   if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
-      assert OS.windows?
-   else
-      refute OS.windows?
-   end
-  end
 
   it "should have good looking float#inspect" do
      assert(  (1.1 - 0.9).inspect.include? '0.2000000' ) # 0.20000000000000006661 or something close to it
@@ -86,7 +78,7 @@ describe Sane do
     [1,2,3].ave.should == 2
   end
 
-  it "should have an sputs method that outputs " do
+  it "should have an sputs method " do
     sputs 1,2,3
   end
 
@@ -107,7 +99,6 @@ describe Sane do
   end
 
   it "should have blank? and empty? for arrays and strings" do
-    pending "completion"
     assert ''.blank?
     assert ''.empty?
     assert [].blank?
