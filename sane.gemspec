@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.12.1"
+  s.version = "0.12.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roger Pack"]
@@ -13,11 +13,13 @@ Gem::Specification.new do |s|
   s.description = %q{Helpers for ruby core to make it easier to work with--things that are missing from core but should arguably be there}
   s.email = ["rogerdpack@gmail.com"]
   s.extra_rdoc_files = [
-    "README",
+    "ChangeLog",
+     "README",
      "TODO"
   ]
   s.files = [
-    "README",
+    "ChangeLog",
+     "README",
      "Rakefile",
      "VERSION",
      "lib/_dbg.rb",
@@ -25,13 +27,13 @@ Gem::Specification.new do |s|
      "lib/sane/add_regexes.rb",
      "lib/sane/array_ave.rb",
      "lib/sane/bugs.rb",
+     "lib/sane/contain.rb",
      "lib/sane/enumerable-extra.rb",
      "lib/sane/file.rb",
      "lib/sane/float.rb",
      "lib/sane/hash_hashes.rb",
      "lib/sane/hash_set_operators_bug_fix.rb",
      "lib/sane/irb_startup_options.rb",
-     "lib/sane/os.rb",
      "lib/sane/sane_random.rb",
      "sane.gemspec",
      "spec/test_sane.spec",
@@ -50,13 +52,16 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rdp-require_all>, [">= 0"])
       s.add_runtime_dependency(%q<hash_set_operators>, [">= 0"])
+      s.add_runtime_dependency(%q<os>, [">= 0"])
     else
       s.add_dependency(%q<rdp-require_all>, [">= 0"])
       s.add_dependency(%q<hash_set_operators>, [">= 0"])
+      s.add_dependency(%q<os>, [">= 0"])
     end
   else
     s.add_dependency(%q<rdp-require_all>, [">= 0"])
     s.add_dependency(%q<hash_set_operators>, [">= 0"])
+    s.add_dependency(%q<os>, [">= 0"])
   end
 end
 
