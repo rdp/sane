@@ -104,5 +104,13 @@ describe Sane do
     assert [].blank?
     assert [].empty?
   end
+
+  it "should have a select!" do
+   a = [1,2,3].select!{|n| n < 3}
+   a.length.should == 2
+   a = [1,2,3]
+   a.select!{|n| n < 3}
+   a.length.should == 2
+  end
    
 end
