@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.14.0"
+  s.version = "0.15.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roger Pack"]
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
      "lib/sane/irb_startup_options.rb",
      "lib/sane/sane_random.rb",
      "sane.gemspec",
-     "spec/test_sane.spec",
+     "spec/spec.sane.rb",
      "todo"
   ]
   s.homepage = %q{http://github.com/rogerdpack/sane_ruby}
@@ -44,6 +44,9 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Helpers for ruby core to make it easier to work with--things that are missing from core but should arguably be there}
+  s.test_files = [
+    "spec/spec.sane.rb"
+  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
