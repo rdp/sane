@@ -1,5 +1,3 @@
 class String
-  def contain? something
-    include? something
-  end
+  alias :contain? :include?
 end

@@ -71,12 +71,6 @@ class Object
     puts
   end
 
-  def aliash hash
-    hash.each_pair {|new, old|
-      alias_method new, old
-    }
-  end
-
   def singleton_class
     class << self; self; end
   end

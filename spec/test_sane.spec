@@ -25,11 +25,6 @@ describe Sane do
 
   class A
     def go; 3; end
-    aliash :go2 => :go
-  end
-
-  it "should aliaz right" do
-    A.new.go2.should == 3
   end
 
   it "should have a singleton_class method" do
@@ -104,6 +99,19 @@ describe Sane do
     assert "a".include? "a"
     assert "a".contain? "a"
     assert !("a".contain? "b")
+  end
+
+  it "should have include and contain for arrays" do
+    assert ['a'].include? "a"    
+    assert ['a'].contain? "a"    
+  end
+
+  it "should have blank? and empty? for arrays and strings" do
+    pending "completion"
+    assert ''.blank?
+    assert ''.empty?
+    assert [].blank?
+    assert [].empty?
   end
    
 end
