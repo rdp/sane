@@ -116,5 +116,9 @@ describe Sane do
    a.select!{|n| n < 3}
    a.length.should == 2
   end
+
+  it "should have File.filename" do
+    File.filename("abc/ext.xt").should == "ext.xt"
+  end
    
 end
