@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sane}
-  s.version = "0.16.1"
+  s.version = "0.17.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roger Pack"]
@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
      "lib/sane/contain.rb",
      "lib/sane/enumerable-extra.rb",
      "lib/sane/file.rb",
+     "lib/sane/file_filename.rb",
      "lib/sane/float.rb",
      "lib/sane/hash_hashes.rb",
      "lib/sane/hash_minus_hash.rb",
