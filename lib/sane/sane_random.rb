@@ -80,11 +80,13 @@ end
 
 module Kernel
   BASE_DIR = Dir.getwd
+  
   def __DIR__
     dir = (/^(.+)?:\d+/ =~ caller[0]) ? File.expand_path(File.dirname($1), BASE_DIR) : nil
     dir += '/' if dir
     dir
   end unless defined?(__DIR__)
+  alias __dir__ __DIR__ unless defined?(__dir__)
 end
 
 if RUBY_VERSION >= '1.9.2'

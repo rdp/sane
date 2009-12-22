@@ -23,6 +23,10 @@ describe Sane do
    File.delete filename
   end
 
+  it "should have __dir__ too" do
+    __dir__.should_not be_nil
+  end
+
   class A
     def go; 3; end
   end
