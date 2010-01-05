@@ -1,4 +1,8 @@
 # require some "necessary" other gems
+
+# shouldn't need this next line
+# require 'rubygems' if RUBY_VERSION < '1.9' # for the other requires
+
 require 'require_all' # for require_rel
 require 'os'
 require 'andand'

@@ -48,7 +48,7 @@ class Object
 
   # helper to bring up a debugger with less writing [just _dbg]
   def _dbg
-    require 'rubygems'
+    require 'rubygems' if RUBY_VERSION < '1.9' # for ruby-debug gem
     require 'pp' # who would want debug without pp? not I
     begin
       require 'ruby-debug'
