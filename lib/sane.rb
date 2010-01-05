@@ -1,6 +1,7 @@
 # require some "necessary" gems
 
-require 'rubygems' if RUBY_VERSION < '1.9' # for the other requires
+# shouldn't need this
+# require 'rubygems' if RUBY_VERSION < '1.9' # for the other requires
 
 require 'require_all' # for require_rel
 require 'hash_set_operators' # not sure why this one isn't in core
