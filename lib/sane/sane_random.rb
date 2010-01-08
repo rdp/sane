@@ -58,19 +58,6 @@ class Object
     end
   end
 
-  # a method that outputs several items on one line
-  # similar to Java's println, but it adds spaces between items, ex:
-  # sputs 1,2,3
-  # => 1 2 3
-  def sputs *args
-    for arg in args
-      out = arg.to_s
-      print out
-      print " " if out[-1..-1] != " "
-    end
-    puts
-  end
-
   def singleton_class
     class << self; self; end
   end

@@ -83,7 +83,7 @@ describe Sane do
   end
 
   it "should have an sputs method " do
-    sputs 1,2,3
+    pps 1,2,3
   end
 
   it "should allow for map_by" do
