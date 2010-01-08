@@ -59,18 +59,15 @@ describe Sane do
  
   end
 
-  it "should allow regexes to be added" do
-    /a/ + /b/
-  end
-
 # my first implementation of this was *awful* LOL
 # leave out for now
+# just use enumerator.to_a
 #  it "should allow for brackets on enumerators" do
 #    require 'backports' # ugh
 #    assert "ab\r\nc".lines[0] == "ab\r\n"
 #  end
 
-  it "should have good looking float#inspect" do
+  it "should have verbose looking float#inspect" do
      assert(  (1.1 - 0.9).inspect.include? '0.2000000' ) # 0.20000000000000006661 or something close to it
   end
 
@@ -82,7 +79,7 @@ describe Sane do
     [1,2,3].ave.should == 2
   end
 
-  it "should have an sputs method " do
+  it "should have a pps method " do
     pps 1,2,3
   end
 
