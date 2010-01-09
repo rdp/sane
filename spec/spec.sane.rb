@@ -117,5 +117,9 @@ describe Sane do
   it "should have File.filename" do
     File.filename("abc/ext.xt").should == "ext.xt"
   end
+  
+  it "should have an auto-loading pp method" do
+    pp 1,2,3
+  end
    
 end
