@@ -3,10 +3,11 @@
 # shouldn't need this next line
 # require 'rubygems' if RUBY_VERSION < '1.9' # for the other requires
 
-require 'require_all' # for require_rel
 require 'os'
 require 'andand'
-require_rel 'sane' # now require all files in sub directory
+for file in Dir[File.dirname(__FILE__) + '/sane/*'] do
+   require file
+end
 
 class Sane
  # helper for installing it locally on 1.8
@@ -15,7 +16,7 @@ class Sane
  # I hate 1.8
  def self.install_local!
    if RUBY_VERSION >= '1.9'
-    raise 'you dont need to install local for 1.9!'
+     raise 'you dont need to install local for 1.9!'
    end
    require 'fileutils'
    require 'rbconfig'

@@ -121,5 +121,11 @@ describe Sane do
   it "should have an auto-loading pp method" do
     pp 1,2,3
   end
+  
+  it "should have require_relative" do
+    FileUtils.touch 'go.rb'    
+    require_relative 'go.rb'
+    FileUtils.rm 'go.rb'
+  end
    
 end
