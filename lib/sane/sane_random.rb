@@ -1,9 +1,7 @@
-require 'require_all' # a necessary gem
-
 Thread.abort_on_exception = true # typically you *want* to know when a thread dies unexpectedly.
 
 require 'socket'
-BasicSocket.do_not_reverse_lookup = true
+BasicSocket.do_not_reverse_lookup = true # avoid some bugs...
 
 # abstracted from require 'facets/file' ===>
 class File
@@ -48,7 +46,7 @@ class Object
 
   # helper to bring up a debugger with less writing [just _dbg]
   def _dbg
-    require 'rubygems' if RUBY_VERSION < '1.9' # for ruby-debug gem
+    require 'rubygems' if RUBY_VERSION < '1.9' # for ruby-debug gem, in case this is being called via a local install
     require 'pp' # who would want debug without pp? not I
     begin
       require 'ruby-debug'
