@@ -1,6 +1,6 @@
-require File.dirname(File.expand_path __FILE__) + '/../lib/sane'
-
 require 'rubygems' if RUBY_VERSION < '1.9'
+require File.dirname(File.expand_path( __FILE__)) + '/../lib/sane'
+
 require 'spec/autorun'
 
 describe Sane do
@@ -68,7 +68,7 @@ describe Sane do
 #  end
 
   it "should have verbose looking float#inspect" do
-     assert(  (1.1 - 0.9).inspect.include? '0.2000000' ) # 0.20000000000000006661 or something close to it
+     assert(  (1.1 - 0.9).inspect.include?('0.2000000')) # 0.20000000000000006661 or something close to it
   end
 
   it "should return false if you call File.executable? non_existent_file" do
@@ -89,14 +89,14 @@ describe Sane do
   end
   
   it "should allow for contain? and include?" do
-    assert "a".include? "a"
-    assert "a".contain? "a"
+    assert "a".include?( "a")
+    assert "a".contain?( "a")
     assert !("a".contain? "b")
   end
 
   it "should have include and contain for arrays" do
-    assert ['a'].include? "a"    
-    assert ['a'].contain? "a"    
+    assert ['a'].include?( "a"    )
+    assert ['a'].contain?( "a"    )
   end
 
   it "should have blank? and empty? for arrays and strings" do
@@ -126,6 +126,10 @@ describe Sane do
     FileUtils.touch 'go.rb'    
     require_relative 'go.rb'
     FileUtils.rm 'go.rb'
+  end
+  
+  it "should be able to require from a subdir" do
+   require_relative 'subdir/go.rb'
   end
    
 end

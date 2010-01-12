@@ -4,7 +4,9 @@ module Kernel
   module_function
   def require_relative(relative_feature)
     c = caller.first
-    e = c.rindex(/:\d+:in /)
+    # could be spec.sane.rb:127
+    # or e:/abc.rb:127
+    e = c.rindex(/:\d+/)
     file = $`
     if /\A\((.*)\)/ =~ file # eval, etc.
       raise LoadError, "require_relative is called in #{$1}"
