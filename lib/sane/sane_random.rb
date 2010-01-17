@@ -46,13 +46,16 @@ class Object
 
   # helper to bring up a debugger with less writing [just _dbg]
   def _dbg
-    require 'rubygems' if RUBY_VERSION < '1.9' # for ruby-debug gem, in case this is being called via a local install
-    require 'pp' # who would want debug without pp? not I
     begin
       require 'ruby-debug'
       debugger
     rescue LoadError => e
-      throw "unable to load ruby-debug gem for _dbg... #{e}"
+      require 'rubygems'
+      begin
+        require 'ruby-debug'
+      rescue LoadError => e
+        throw "unable to load ruby-debug gem for _dbg... #{e}"
+      end
     end
   end
 
