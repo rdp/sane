@@ -35,15 +35,6 @@ class Object
     collection.include?(self)
   end unless respond_to? :in
 
-  # ex: assert(some statement)
-  # or
-  # assert(some statement, "some helper string")
-  def assert(should_be_true, string = nil)
-    if(!should_be_true)
-      raise "assertion failed #{string}"
-    end
-  end unless respond_to? :assert
-
   # helper to bring up a debugger with less writing [just _dbg]
   def _dbg
     begin
