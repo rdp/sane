@@ -1,7 +1,21 @@
-require 'rubygems' if RUBY_VERSION < '1.9'
-require File.dirname(File.expand_path( __FILE__)) + '/../lib/sane'
-
+$:.unshift File.expand_path('../lib')
+require 'rubygems'
+require 'fast_require' if RUBY_VERSION >= '1.9'
+require File.dirname(__FILE__) + '/../lib/sane'
 require 'spec/autorun'
+
+class Object
+  alias :yes :should   # a.yes == [3]
+  def yes!
+    self
+  end
+end
+
+class FalseClass
+  def yes!
+    raise 'failed' # a.true!
+  end
+end
 
 describe Sane do
 
@@ -86,6 +100,10 @@ describe Sane do
   it "should allow for map_by" do
    ["1"].map_by(:to_i).should == [1]
    ["1"].collect_by(:to_i).should == [1]
+   a = ["1"]
+   a.map_by!(:to_i)
+   a.yes == [1]
+   a == [1]
   end
   
   it "should allow for contain? and include?" do
@@ -95,8 +113,8 @@ describe Sane do
   end
 
   it "should have include and contain for arrays" do
-    assert ['a'].include?( "a"    )
-    assert ['a'].contain?( "a"    )
+    assert ['a'].include?( "a")
+    assert ['a'].contain?( "a")
   end
 
   it "should have blank? and empty? for arrays and strings" do
@@ -120,6 +138,11 @@ describe Sane do
   
   it "should have an auto-loading pp method" do
     pp 1,2,3
+    pp 1,2,3
+  end
+  
+  it "should work if you require 'pp' before hand" do
+    system("ruby -v -I../lib files/pp_before_hand.rb").should be_true    
   end
   
   it "should have require_relative" do
