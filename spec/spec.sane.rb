@@ -154,5 +154,9 @@ describe Sane do
   it "should be able to require from a subdir" do
    require_relative 'subdir/go.rb'
   end
-   
+  
+  it "should have a File.home method" do
+    assert File.home == File.expand_path('~')
+  end
+     
 end
