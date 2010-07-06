@@ -1,6 +1,5 @@
 $:.unshift File.expand_path('../lib')
 require 'rubygems'
-require 'fast_require' if RUBY_VERSION >= '1.9'
 require File.dirname(__FILE__) + '/../lib/sane'
 require 'spec/autorun'
 
@@ -158,5 +157,12 @@ describe Sane do
   it "should have a File.home method" do
     assert File.home == File.expand_path('~')
   end
-     
+  
+  require 'benchmark'
+  
+  it "should Thread.join_all_others" do
+    a = Thread.new { sleep 1 }
+    assert Benchmark.realtime{Thread.join_all_others} > 0.5
+  end
+  
 end
