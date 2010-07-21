@@ -1,7 +1,13 @@
 $:.unshift File.expand_path('../lib')
 require 'rubygems'
 require File.dirname(__FILE__) + '/../lib/sane'
-require 'spec/autorun'
+begin
+  require 'spec/autorun' 
+rescue LoadError
+  require 'rspec'
+end
+require 'fileutils'
+
 
 class Object
   alias :yes :should   # a.yes == [3]
@@ -81,7 +87,10 @@ describe Sane do
 #  end
 
   it "should have verbose looking float#inspect" do
-     assert(  (1.1 - 0.9).inspect.include?('0.2000000')) # 0.20000000000000006661 or something close to it
+    (1.1 - 0.9).inspect.should include('0.2000000') # 0.20000000000000006661 or something close to it
+    1.1.inspect.should == "1.1"
+    1.0.inspect.should == "1.0"
+    
   end
 
   it "should return false if you call File.executable? non_existent_file" do
@@ -164,5 +173,12 @@ describe Sane do
     a = Thread.new { sleep 1 }
     assert Benchmark.realtime{Thread.join_all_others} > 0.5
   end
+
+  it "should have an insert commas operator on numbers" do
+    1_000_000.comma_format.should == '1,000,000'
+    1_000_000.0.comma_format.should == '1,000,000.0'
+    1_000_000.0.comma_format.should == '1,000,000.0'
+  end
+  
   
 end
