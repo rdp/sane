@@ -5,7 +5,7 @@
 
 require 'os'
 require 'andand'
-for file in Dir[File.dirname(__FILE__) + '/sane/*.rb'] do
+for file in Dir[File.dirname(__FILE__) + '/sane/*.rb'].sort do
    require file
 end
 
