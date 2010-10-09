@@ -13,7 +13,6 @@ module Kernel
     if /\A\((.*)\)/ =~ file # eval, etc.
       raise LoadError, "require_relative is called in #{$1}"
     end
-    p 'relative is', relative_feature, File.dirname(file), OriginalDir
     absolute_feature = File.expand_path(File.join(File.dirname(file), relative_feature))
     begin
       require absolute_feature

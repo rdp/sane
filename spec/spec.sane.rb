@@ -164,8 +164,6 @@ describe Sane do
   end
   
   it "should require_relative after changing dirs" do
-    require 'ruby-debug'
-    debugger
     assert system(OS.ruby_bin + " req_rel_bug/recreate.rb")
   end
   
