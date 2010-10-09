@@ -2,6 +2,8 @@ unless Kernel.respond_to?(:require_relative, true)
   
 module Kernel
   module_function
+  OriginalDir = File.expand_path(Dir.pwd) # try to accomodate for later Directory changes...
+  
   def require_relative(relative_feature)
     c = caller.first
     # could be spec.sane.rb:127
@@ -11,8 +13,15 @@ module Kernel
     if /\A\((.*)\)/ =~ file # eval, etc.
       raise LoadError, "require_relative is called in #{$1}"
     end
+    p 'relative is', relative_feature, File.dirname(file), OriginalDir
     absolute_feature = File.expand_path(File.join(File.dirname(file), relative_feature))
-    require absolute_feature
+    begin
+      require absolute_feature
+    rescue LoadError => e
+      # hacky kludge in case they've changed dirs...
+      require File.expand_path(File.join(OriginalDir,File.dirname(file), relative_feature))
+    end
+    
   end
 end
 

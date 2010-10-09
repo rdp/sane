@@ -163,6 +163,12 @@ describe Sane do
    require_relative 'subdir/go.rb'
   end
   
+  it "should require_relative after changing dirs" do
+    require 'ruby-debug'
+    debugger
+    assert system(OS.ruby_bin + " req_rel_bug/recreate.rb")
+  end
+  
   it "should have a File.home method" do
     assert File.home == File.expand_path('~')
   end
