@@ -1,2 +1,2 @@
 require 'sane'
-require_relative 'test/assertions'
+require 'sane/test/assertions'
