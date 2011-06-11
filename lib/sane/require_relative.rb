@@ -18,7 +18,11 @@ module Kernel
       require absolute_feature
     rescue LoadError => e
       # hacky kludge in case they've changed dirs...
-      require File.expand_path(File.join(OriginalDir,File.dirname(file), relative_feature))
+      begin
+        require File.expand_path(File.join(OriginalDir,File.dirname(file), relative_feature))
+      rescue LoadError => ignore_me
+        raise e # don't mask...
+      end
     end
     
   end
