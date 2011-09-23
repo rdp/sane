@@ -184,5 +184,9 @@ describe Sane do
     1_000_000.0.comma_format.should == '1,000,000.0'
   end
   
+  it 'should have socket ips' do
+    Socket.get_host_ips.length.should be > 0
+  end
+  
   
 end
