@@ -1,4 +1,6 @@
-  #     3: add hash_set_operators
+0.25.6 add Socket.get_host_ips, remove dependency on andand until I need it again.
+
+#     3: add hash_set_operators
   # 0.2.2: add Regex+Regex, bug fixes
   # 0.2.0:
   #       add irb simple prompt, auto indent by default [sane defaults!]

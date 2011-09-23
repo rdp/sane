@@ -5,8 +5,8 @@ if RUBY_VERSION < '1.9.2'
       small = "%f" % self
       
       if small.to_f == self
-        small.sub! /0+$/, ''
-        small.sub /\.$/, '.0'
+        small.sub!(/0+$/, '')
+        small.sub(/\.$/, '.0') # reformat, see spec
       else
         big
       end

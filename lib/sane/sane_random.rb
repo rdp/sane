@@ -65,7 +65,9 @@ module Kernel
     dir += '/' if dir
     dir
   end unless defined?(__DIR__)
-  alias __dir__ __DIR__ unless defined?(__dir__)
+  # deemed too unfriendly since it would
+  # seem to imply that _file__ also exists
+  # alias __dir__ __DIR__ unless defined?(__dir__)
 end
 
 if RUBY_VERSION >= '1.9.2'
