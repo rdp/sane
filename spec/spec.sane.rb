@@ -30,6 +30,7 @@ describe Sane do
 
   it "should have working __DIR__" do
     __DIR__.should_not == nil
+    __DIR__[-1].should_not == '/' # not ending slash, that feels weird in real use.
   end
 
   it "should write to files" do
@@ -175,14 +176,17 @@ describe Sane do
   end
 
   it "should have an insert commas operator on numbers" do
-    1_000_000.comma_format.should == '1,000,000'
-    1_000_000.0.comma_format.should == '1,000,000.0'
-    1_000_000.0.comma_format.should == '1,000,000.0'
+    1_000_000.group_digits.should == '1,000,000'
+    1_000_000.0.group_digits.should == '1,000,000.0'
+    1_000_000.03555.group_digits.should == '1,000,000.03555'
   end
   
-  it 'should have socket ips' do
-    Socket.get_host_ips.length.should be > 0
+  it "should have a string replace method" do
+    "abc".replace_all!("def").should == "def"
   end
   
+  it 'should have socket get_host_ips' do
+    Socket.get_host_ips[0].should_not be nil
+  end
   
 end
