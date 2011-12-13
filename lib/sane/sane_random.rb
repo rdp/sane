@@ -62,7 +62,6 @@ module Kernel
   
   def __DIR__
     dir = (/^(.+)?:\d+/ =~ caller[0]) ? File.expand_path(File.dirname($1), BASE_DIR) : nil
-    dir += '/' if dir
     dir
   end unless defined?(__DIR__)
   # deemed too unfriendly since it would
