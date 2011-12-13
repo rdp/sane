@@ -6,7 +6,7 @@ require 'socket' # sane already loads it for BasicSocket.reverse_lookup
 
 class Socket
  class << self
-   def get_host_ips
+   def get_local_ips
      get_ips(Socket.gethostname)
    end
 

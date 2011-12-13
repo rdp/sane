@@ -1,6 +1,8 @@
-0.25.7 add Enumerable#sample for 1.8.7  12-13-11
+0.25.0 : add Array#sample, try to add sanity to release numberings, since the ones previous seemed bworked ?
 
-0.25.6 add Socket.get_host_ips, remove dependency on andand until I need it again.
+0.24.6 : add present?
+
+0.23.6 add Socket.get_host_ips, remove dependency on andand until I need it again.
 
 #     3: add hash_set_operators
   # 0.2.2: add Regex+Regex, bug fixes

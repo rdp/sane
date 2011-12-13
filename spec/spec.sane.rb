@@ -4,6 +4,7 @@ require File.dirname(__FILE__) + '/../lib/sane'
 begin
   require 'spec/autorun' 
 rescue LoadError
+  require 'rspec'
   require 'rspec/autorun'
 end
 require 'fileutils'
@@ -186,11 +187,19 @@ describe Sane do
   end
   
   it 'should have socket get_host_ips' do
-    Socket.get_host_ips[0].should_not be nil
+    Socket.get_local_ips[0].should_not be nil
+  end
+  
+  it 'should have present? method' do
+    assert !(''.present?)
+    assert 'a'.present?
+    assert !([].present?)
+    assert ['a'].present?
+    assert !(nil.present?)
   end
   
   it 'should have Array#sample' do
-    [2].sample.should == 2
+    [2].sample.should == 2  
   end
   
 end
