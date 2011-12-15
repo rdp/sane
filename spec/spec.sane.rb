@@ -1,6 +1,6 @@
 $:.unshift File.expand_path('../lib')
 require 'rubygems'
-require File.dirname(__FILE__) + '/../lib/sane'
+require File.dirname(__FILE__) + '/../lib/sane.rb'
 begin
   require 'spec/autorun' 
 rescue LoadError
