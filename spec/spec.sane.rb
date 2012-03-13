@@ -202,4 +202,11 @@ describe Sane do
     [2].sample.should == 2  
   end
   
+  it 'should have String#last' do
+    'abc'.last(2).should == 'bc'
+	'abc'.last(3).should == 'abc'
+	'abc'.last(1).should == 'c'
+	'abc'.last(0).should == '' # this is feeling weird now...
+	'abc'.last(44).should == 'abc'
+  end
 end
