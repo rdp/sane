@@ -1,3 +1,4 @@
+raise 'must be in spec dir' unless File.basename(Dir.pwd) == 'spec'
 $:.unshift File.expand_path('../lib')
 require 'rubygems'
 require File.dirname(__FILE__) + '/../lib/sane.rb'
@@ -204,9 +205,15 @@ describe Sane do
   
   it 'should have String#last' do
     'abc'.last(2).should == 'bc'
-	'abc'.last(3).should == 'abc'
-	'abc'.last(1).should == 'c'
-	'abc'.last(0).should == '' # this is feeling weird now...
-	'abc'.last(44).should == 'abc'
+	  'abc'.last(3).should == 'abc'
+	  'abc'.last(1).should == 'c'
+	  'abc'.last(0).should == '' # this is feeling weird now...
+	  'abc'.last(44).should == 'abc'
+  end
+  
+  it "should have a try2 method" do
+    'a'.try2.gsub(/a/, 'b').should == 'b'
+    nil.try2.gsub(/a/, 'b').should == nil
+    false.try2.gsub(/a/, 'b').should == nil  
   end
 end
