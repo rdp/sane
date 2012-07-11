@@ -214,6 +214,6 @@ describe Sane do
   it "should have a try2 method" do
     'a'.try2.gsub(/a/, 'b').should == 'b'
     nil.try2.gsub(/a/, 'b').should == nil
-    false.try2.gsub(/a/, 'b').should == nil  
+    proc { false.try2.gsub(/a/, 'b')}.should raise_exception(NoMethodError) # why would you want try on false? huh?
   end
 end
