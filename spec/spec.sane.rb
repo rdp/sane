@@ -10,20 +10,6 @@ rescue LoadError
 end
 require 'fileutils'
 
-
-class Object
-  alias :yes :should   # a.yes == [3]
-  def yes!
-    self
-  end
-end
-
-class FalseClass
-  def yes!
-    raise 'failed' # a.true!
-  end
-end
-
 describe Sane do
 
   before do
@@ -109,7 +95,7 @@ describe Sane do
    ["1"].collect_by(:to_i).should == [1]
    a = ["1"]
    a.map_by!(:to_i)
-   a.yes == [1]
+   a.should == [1]
    a == [1]
   end
   

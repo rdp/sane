@@ -21,4 +21,6 @@ enumerable-extra
   >> [1,2,3].map(:to_s) # applies it automatically! far less ugly than [1,2,3].map &:to_s
   => ["1", "2", "3"]
 
+and Thread.abort_on_exception=true # kill program if a child thread dies--alert you earlier!
+
 Don't leave home without these!
