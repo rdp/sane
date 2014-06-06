@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'jeweler2'
+require 'jeweler'
 Jeweler::Tasks.new do |s|
   s.name = %q{sane}
   s.homepage = 'http://github.com/rogerdpack/sane'
